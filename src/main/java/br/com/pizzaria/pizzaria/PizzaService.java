@@ -12,4 +12,5 @@ public interface PizzaService {
     Pizza editar(UUID id, PizzaDTO pizzaDTO);
     Pizza obter(UUID id);
     ArrayList<Pizza> listar();
+    void remover(UUID id);
 }

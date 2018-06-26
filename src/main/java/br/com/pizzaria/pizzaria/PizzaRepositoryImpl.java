@@ -23,12 +23,18 @@ public class PizzaRepositoryImpl implements PizzaRepository {
     }
 
     @Override
-    public void delete(Pizza pizza) {
-
+    public void delete(UUID id) {
+        Pizza pizza = this.findOne(id);
+        this.pizzas.remove(pizza);
     }
 
     @Override
     public Pizza findOne(UUID id) {
+        for (Pizza pizza: pizzas) {
+            if(pizza.getId().equals(id)) {
+                return pizza;
+            }
+        }
         return null;
     }
 }

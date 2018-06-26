@@ -31,6 +31,10 @@ public class PizzaController {
         return new ResponseEntity(pizzaService.obter(id), HttpStatus.OK);
     }
 
-
+    @DeleteMapping
+    public ResponseEntity remover(@RequestParam("id")UUID id) {
+        this.pizzaService.remover(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
 
 }
