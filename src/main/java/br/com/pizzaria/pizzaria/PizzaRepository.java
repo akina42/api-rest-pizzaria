@@ -7,6 +7,6 @@ public interface PizzaRepository {
 
     Pizza save(Pizza pizza);
     ArrayList<Pizza> findAll();
-    void delete(Pizza pizza);
+    void delete(UUID id);
     Pizza findOne(UUID id);
 }

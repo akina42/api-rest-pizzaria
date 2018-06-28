@@ -39,4 +39,11 @@ public class PizzaServiceImpl implements PizzaService {
     public ArrayList<Pizza> listar() {
         return this.pizzaRepository.findAll();
     }
+
+    @Override
+    public void remover(UUID id) {
+        this.pizzaRepository.delete(id);
+    }
+
+
 }
