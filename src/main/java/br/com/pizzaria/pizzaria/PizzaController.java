@@ -37,4 +37,11 @@ public class PizzaController {
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
+    @PutMapping(
+            produces = "application/json"
+    )
+    public ResponseEntity editar(@RequestParam("id") UUID id, @RequestBody PizzaDTO pizzaDTO){
+        return new ResponseEntity(this.pizzaService.editar(id, pizzaDTO), HttpStatus.OK);
+    }
+
 }
